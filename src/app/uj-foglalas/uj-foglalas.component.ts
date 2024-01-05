@@ -7,11 +7,18 @@ import { FoglalasService } from '../Services/foglalas.service';
   styleUrls: ['./uj-foglalas.component.css']
 })
 export class UjFoglalasComponent {
-  adat:any = {};
+  adat:any = {
+    cim: '',
+    datum: '',
+    fo: '',
+    iranyitoszam: '',
+    nev: '',
+  };
 
   constructor(private adatService: FoglalasService) {}
 
   onSubmit(): void {
+    console.log(this.adat)
     this.adatService.sendAdat(this.adat).subscribe(
       (response) => {
         console.log('Az adat átment!', response);

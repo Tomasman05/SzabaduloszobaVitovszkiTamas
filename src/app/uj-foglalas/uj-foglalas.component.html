@@ -4,17 +4,17 @@
         <input type="text" id="cim" [(ngModel)]="adat.cim" class="form-control" name="cim" required>
         
         <label for="datum">Dátum:</label>
-        <input type="text" id="datum" [(ngModel)]="adat.datum" class="form-control" name="datum" required>
+        <input type="date" id="datum" [(ngModel)]="adat.datum" class="form-control" name="datum" required>
         
         <label for="fo">Fő:</label>
-        <input type="text" id="fo" [(ngModel)]="adat.fo" class="form-control" name="fo" required>
+        <input type="number" id="fo" [(ngModel)]="adat.fo" class="form-control" name="fo" required>
         
         <label for="iranyitoszam">Irányítószám:</label>
-        <input type="text" id="iranyitoszam" [(ngModel)]="adat.iranyitoszam" class="form-control" name="iranyitoszam" required>
+        <input type="number" id="iranyitoszam" [(ngModel)]="adat.iranyitoszam" class="form-control" name="iranyitoszam" required>
         
         <label for="nev">Név:</label>
         <input type="text" id="nev" [(ngModel)]="adat.nev" class="form-control" name="nev" required>
         
-        <button type="submit">Küldés</button>
+        <button class="btn btn-danger" (click)="onSubmit" routerLink="">Küldés</button>
     </div>
 </div>
