@@ -1,0 +1,21 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Dátum</th>
+            <th>Név</th>
+            <th>Fők száma</th>
+            <th>Helyszín</th>
+            <th>Irányítószám</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let room of rooms">
+            <td>{{ room.datum }}</td>
+            <td>{{ room.nev }}</td>
+            <td>{{ room.fo }}</td>
+            <td>{{ room.helyszin }}</td>
+            <td>{{ room.iranyitoszam }}</td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-danger" routerLink="">Vissza a kezdőlapra</button>
