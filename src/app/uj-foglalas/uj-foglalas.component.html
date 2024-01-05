@@ -1,20 +1,21 @@
 <div class="container">
-    <div (ngSubmit)="onSubmit()">
-        <label for="cim">Cím:</label>
-        <input type="text" id="cim" [(ngModel)]="adat.cim" class="form-control" name="cim" required>
-        
-        <label for="datum">Dátum:</label>
-        <input type="date" id="datum" [(ngModel)]="adat.datum" class="form-control" name="datum" required>
-        
-        <label for="fo">Fő:</label>
-        <input type="number" id="fo" [(ngModel)]="adat.fo" class="form-control" name="fo" required>
-        
-        <label for="iranyitoszam">Irányítószám:</label>
-        <input type="number" id="iranyitoszam" [(ngModel)]="adat.iranyitoszam" class="form-control" name="iranyitoszam" required>
-        
-        <label for="nev">Név:</label>
-        <input type="text" id="nev" [(ngModel)]="adat.nev" class="form-control" name="nev" required>
-        
-        <button class="btn btn-danger" (click)="onSubmit" routerLink="">Küldés</button>
-    </div>
-</div>
+  <h1>Új foglalás felvétele</h1>
+    <form #foglalasForm="ngForm" (ngSubmit)="onSubmit(foglalasForm)">
+      <label for="cim">Cím:</label>
+      <input type="text" id="cim" [(ngModel)]="adat.cim" class="form-control" name="cim" required>
+      
+      <label for="datum">Dátum:</label>
+      <input type="date" id="datum" [(ngModel)]="adat.datum" class="form-control" name="datum" required>
+      
+      <label for="fo">Fő:</label>
+      <input type="number" id="fo" [(ngModel)]="adat.fo" class="form-control" [min]="2" [max]="16" name="fo" required>
+      
+      <label for="iranyitoszam">Irányítószám:</label>
+      <input type="number" id="iranyitoszam" [(ngModel)]="adat.iranyitoszam" class="form-control" name="iranyitoszam" maxlength="4" required>
+      
+      <label for="nev">Név:</label>
+      <input type="text" id="nev" [(ngModel)]="adat.nev" class="form-control" pattern="[A-Za-z\s]+" name="nev" required>
+      
+      <button type="submit" class="btn btn-danger mt-3 mb-3">Küldés</button>
+    </form>
+  </div>
