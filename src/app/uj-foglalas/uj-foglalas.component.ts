@@ -40,7 +40,7 @@ export class UjFoglalasComponent implements OnInit{
 
   private formatDate(date: Date): string {
     const day = date.getDate();
-    const month = date.getMonth() + 1; // Hónapok 0-tól indexelődnek, így +1
+    const month = date.getMonth() + 1;
     const year = date.getFullYear();
 
     return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
